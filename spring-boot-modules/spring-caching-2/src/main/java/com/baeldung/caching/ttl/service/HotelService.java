@@ -13,11 +13,11 @@ import java.util.List;
 
 @Service
 public class HotelService {
+	Logger logger = LoggerFactory.getLogger(HotelService.class);
 
-    private final HotelRepository hotelRepository;
-    Logger logger = LoggerFactory.getLogger(HotelService.class);
+    private HotelRepository hotelRepository;
 
-    HotelService(HotelRepository hotelRepository) {
+    public HotelService(HotelRepository hotelRepository) {
         this.hotelRepository = hotelRepository;
     }
 

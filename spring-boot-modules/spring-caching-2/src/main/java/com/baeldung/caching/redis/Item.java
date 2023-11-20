@@ -1,21 +1,28 @@
 package com.baeldung.caching.redis;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.io.Serializable;
 
-@Data
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
 public class Item implements Serializable {
+	private static final long serialVersionUID = -3685888031068519651L;
+	private @Id String id;
+	private String description;
+	
+	public Item() {}
+	
+	public Item(String id, String description) {
+		this.id = id;
+		this.description = description;
+	}
 
-    @Id
-    String id;
+	public String getId() {
+		return id;
+	}
 
-    String description;
+	public String getDescription() {
+		return description;
+	}
 }
